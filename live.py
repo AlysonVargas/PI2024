@@ -25,7 +25,6 @@ while True:
     for text_result in text_results:
         bbox, text, score = text_result
 
-        # Verificar se o texto é uma placa conhecida
         if text in lista_placas:
             cor = (0, 255, 0)  
         else:
@@ -41,10 +40,7 @@ while True:
     # Exibir o frame resultante
     cv2.imshow('Text Detection', frame)
 
-    # Verificar se o usuário pressionou a tecla 'q' para sair
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
 
-# Liberar os recursos
+
 cap.release()
 cv2.destroyAllWindows()
