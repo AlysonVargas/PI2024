@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-login">
+        <div class="left-login">
+            <h1>Faça o login</h1>
+            <img src="seguranca.svg" class="left-login-image" alt="segurancaanimacao">
+        </div>
+        <div class="right-login">
+            <div class="card-login">
+                <h1>LOGIN</h1>
+                <div class="textfield">
+                    <label for="usuario">Usuário</label>
+                    <input type="text" id="usuario" name="usuario" placeholder="usuario">
+                </div>
+                <div class="textfield">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" placeholder="Senha">
+                </div>
+                <button class="btn-login" onclick="login()">Login</button>
+            </div>
+        </div>
+    </div>
+    <div id="menu" class="hidden">
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('register')">Registrar Placa</a></li>
+                <li><a href="#" onclick="showSection('delete')">Deletar Placa</a></li>
+                <li><a href="#" onclick="showSection('status')">Verificar Status</a></li>
+            </ul>
+        </nav>
+        <div id="register" class="hidden section">
+            <h2>Registrar Placa de Veículo</h2>
+            <div class="textfield">
+                <label for="placa">Placa</label>
+                <input type="text" id="placa" placeholder="Digite a placa do veículo">
+            </div>
+            <button class="btn-login" onclick="registerPlate()">Registrar</button>
+            <table id="registered-plates" class="hidden">
+                <thead>
+                    <tr>
+                        <th>Placa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div id="delete" class="hidden section">
+            <h2>Deletar Placa de Veículo</h2>
+            <div class="textfield">
+                <label for="placa-delete">Placa</label>
+                <input type="text" id="placa-delete" placeholder="Digite a placa do veículo">
+            </div>
+            <button class="btn-login" onclick="deletePlate()">Deletar</button>
+        </div>
+        <div id="status" class="hidden section">
+            <h2>Verificar Status do Veículo</h2>
+            <div class="textfield">
+                <label for="placa-status">Placa</label>
+                <input type="text" id="placa-status" placeholder="Digite a placa do veículo">
+            </div>
+            <button class="btn-login" onclick="checkStatus()">Verificar</button>
+            <p id="status-result"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
